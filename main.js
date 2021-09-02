@@ -1,11 +1,12 @@
 // spinner toggle function
-
 let spinnerToggle = displayStyle => {
     document.getElementById("spinner").style.display = displayStyle;
 };
+
 let resultToggle = displayStyle => {
     document.getElementById("row").style.display = displayStyle;
 };
+
 let bookFoundToggle = displayStyle => {
     document.getElementById("book-found").style.display = displayStyle;
 };
@@ -18,6 +19,8 @@ document.getElementById("search").addEventListener("click", () => {
     let inputValue = inputBox.value;
 
     // empty input box validation
+
+
     if (inputValue === "") {
         resultToggle("none");
         let result = document.getElementById("result");
@@ -28,13 +31,16 @@ document.getElementById("search").addEventListener("click", () => {
 
 
     }
-     else {
+    else {
+
         spinnerToggle("block");
         resultToggle("none");
         bookFoundToggle("none");
         result.style.display = "none";
 
         // book fetch
+
+
         let loadData = bookname => {
             let url = `https://openlibrary.org/search.json?q=${bookname}`;
             fetch(url)
